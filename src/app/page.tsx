@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Header from "./components/_Header/header";
 import Chat from "./components/_Chat/chat";
 import Footer from "./components/_Footer/footer";
-import Message from "./components/_Message/message";
+import Message from "./components/_Message/[slug]/page";
 import Config from "./components/_Config/config";
 import ModalProfile from "./components/_ModalProfile/modalprofile";
 
