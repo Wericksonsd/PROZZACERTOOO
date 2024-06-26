@@ -2,21 +2,23 @@
 
 import styles from "./header.module.css"
 import ModalProfile from "../_ModalProfile/modalprofile"
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types"
 
 const Header = (props : any) => {
 
-    const [nome, setNome] = useState();
-    const [foto, setFoto] = useState();
+    const [nome, setNome] = useState(props.name);
+    const [foto, setFoto] = useState(props.photo);
+    const [modal, setModal] = useState(false);
 
-    useEffect (() => {
+    useEffect(() => {
+        setNome(props.name);
+        setFoto(props.photo);
+    }, [props.name, props.photo]);
 
-        {
-            setNome(props.name),        
-            setFoto(props.photo)
-        }
-    })
+    const ModalOpen = () => {
+        setModal(!modal);
+    }
 
     return (
         <div className={styles.container}>
@@ -24,16 +26,19 @@ const Header = (props : any) => {
             <div className={styles.right}>
                 <h1>{nome}</h1>
                 <img className={styles.profilePic} src={foto} alt="" />
-                <img className={styles.config} src="../cfg.svg" alt="" />
+                <img className={styles.config} onClick={ModalOpen} src="../cfg.svg" alt="" />
             </div>
+            <ModalProfile modalP={modal}/>
+            {modal && <ModalProfile />}
         </div>
-    )
+    );
 
 }
 
 Header.propTypes = {
     name: PropTypes.string,
-    photo: PropTypes.string
+    photo: PropTypes.string,
+    modalP: PropTypes.bool
 }
 
 Header.defaultProps = {

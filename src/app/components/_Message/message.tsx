@@ -51,12 +51,24 @@ const Message = () => {
         },
 
     ])
+    const [msgIpt, setMsgIpt] = useState();
+
+    const DigitarTexto = (event : any) => {
+        setMsgIpt(event.target.value)
+    }
+
+    const EnviarMsg = () => {
+        
+    }
 
     return (
         <div className={styles.container}>
                 <div className={styles.inputsField}>
-                    <input title="message" type="text" />
-                    <img src="../send.svg" alt="" />
+                    <input title="message"
+                            type="text"
+                            placeholder="Digite a Mensagem"
+                            onChange={DigitarTexto} />
+                    <img onClick={EnviarMsg} className={styles.send} src="../send.svg" alt="" />
                 </div>
                 <div className={styles.messageCampo}>
                     <div className={styles.messages}>

@@ -30,8 +30,8 @@ const Config = (props : any) => {
                 <h3>{status}</h3>
             </div>
             <div className={ styles.buttons }>
-                <button className={styles.block}>AAAAA</button>
-                <button className={styles.delete}>BBBBB</button>
+                <button type="button" className={styles.block}>AAAAA</button>
+                <button type="button" className={styles.delete}>BBBBB</button>
             </div>
 
         </div>

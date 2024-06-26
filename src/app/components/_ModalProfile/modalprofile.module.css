@@ -1,14 +1,18 @@
-.container{
+.container, .containerClosed{
     height: auto;
     width: 35%;
     background-color: #0e4131ee;
     color: var(--branco);
     padding: 40px;
     position: absolute;
-    translate: 120% 50px;
+    translate: 120% 50%;
     border-radius: 5px;
-    display: none;
+    display: flex;
     flex-direction: column;
+}
+
+.containerClosed{
+    display: none;
 }
 
 .foto{

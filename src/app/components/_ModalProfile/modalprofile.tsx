@@ -15,6 +15,7 @@ const ModalProfile = (props:any) => {
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
     const [admin, setAdmin] = useState();
+    const [open, setOpen] = useState(false);
 
     useEffect (() => {
 
@@ -27,12 +28,21 @@ const ModalProfile = (props:any) => {
             setEnder(props.endereco),
             setEmail(props.mail),
             setSenha(props.pass),
-            setAdmin(props.administrator)
+            setAdmin(props.administrator),
+            setOpen(props.modalP)
         }
-    })
+    },[props])
+
+    const EditarDados = () => {
+
+    }
+
+    const ConfirmarDados = () => {
+        setOpen(!open)
+    }    
 
     return (
-        <div className={styles.container}>
+        <div className={open ? styles.container : styles.containerClosed}>
             <div>
                 <div className={styles.foto}>
                     <img className={styles.pfPic} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuWmlNKUKoymXswfq_-Au2Qn7E74w-Y2jqF8Sb-tm8qEjbL7bwYkBJem86sNVbc-G8GYY&usqp=CAU" alt="" />
@@ -55,7 +65,8 @@ const ModalProfile = (props:any) => {
                     <h3>{ender}</h3>
                 </div>
                 <div className={styles.botoes}>
-                    <button type="button" className={styles.confirmar}>CONFIRMAR</button>
+                    <button type="button" onClick={ConfirmarDados}className={styles.confirmar}>CONFIRMAR</button>
+                    <button type="button" onClick={EditarDados} className={styles.editar}>EDITAR</button>
                     <button type="button" className={styles.deslogar}>SAIR DA CONTA</button>
                 </div>
             </div>

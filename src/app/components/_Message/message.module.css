@@ -55,3 +55,8 @@
     height: auto;
     margin-top: 15px;
 }
+
+.send:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
