@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/_Header/header"
+import Header from "./components/_Header/header";
+import Chat from "./components/_Chat/chat";
+import Footer from "./components/_Footer/footer";
+import Config from "./components/_Config/config";
+import ModalProfile from "./components/_ModalProfile/modalprofile";
+import styles from "./page.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +23,16 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
+      <div className={styles.container}>
+      <Header/>
+      <ModalProfile/>
+      <div className={styles.main}>
+        <Chat/>
         {children}
+        <Config/>
+      </div>
+      <Footer/>
+    </div>
       </body>
     </html>
   );

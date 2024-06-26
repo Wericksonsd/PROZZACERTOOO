@@ -22,6 +22,7 @@
     align-items: center;
     background-color: rgba(240, 248, 255, 0.068);
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 .containerBox:hover{

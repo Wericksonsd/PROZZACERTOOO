@@ -2,8 +2,9 @@
 
 import styles from "./chat.module.css"
 import React,{useState, useEffect} from 'react'
-import Message from "../_Message/message"
+import Link from "next/link";
 import PropTypes from 'prop-types'
+
 
 const ChatBox = (props : any) => {
 
@@ -11,6 +12,7 @@ const ChatBox = (props : any) => {
     const [pfPic, setPfPic] = useState();
     const [msg, setMsg] = useState();
     const [userId, setUserId] = useState();
+    const [link, setLink] = useState(props.link)
 
     useEffect (() => {
 
@@ -23,14 +25,8 @@ const ChatBox = (props : any) => {
 
     },[])
 
-    const OpenMsg = () => {
-        <Message
-        idUser={userId}/>
-        console.log("Open message for user ID:", userId);
-    }
-
     return (
-        <div className={ styles.containerBox} onClick={OpenMsg}>
+        <Link href={link} className={styles.containerBox}>
             <div className={ styles.profilePhoto}>
                 <img src={pfPic} alt="userphoto" />
             </div>
@@ -40,7 +36,7 @@ const ChatBox = (props : any) => {
                     <h4>{msg}</h4>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 
 }
@@ -49,7 +45,8 @@ ChatBox.propTypes = {
     name: PropTypes.string,
     photo: PropTypes.string,
     status: PropTypes.string,
-    id: PropTypes.number
+    id: PropTypes.number,
+    link: PropTypes.string
 }
 
 ChatBox.defaultProps = {

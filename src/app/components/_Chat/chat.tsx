@@ -16,7 +16,8 @@ const Chat = async () => {
                     id={user.id}
                     name={user.name}
                     photo={user.photo}
-                    status={user.status}/>
+                    status={user.status}
+                    link={user.link}/>
             )}
         </div>
     )

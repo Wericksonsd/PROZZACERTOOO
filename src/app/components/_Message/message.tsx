@@ -10,8 +10,9 @@ const Message  = (props:any) => {
     return (
         <div className={styles.container}>
             <ChatInput/>
-            <MsgHistory
-            id= {idUser}/> 
+            <div className={styles.containerDE}>
+
+            </div>
         </div>
     )
 

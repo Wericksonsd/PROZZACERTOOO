@@ -10,6 +10,7 @@ const users = [
         "status": "Invisível",
         "fone": "0123111",
         "ender": "Rua WWE, 45, - Califórnia - US",
+        "link": "/message",
         "admin": false
     },
     {
@@ -23,6 +24,7 @@ const users = [
         "status": "zerando Elden Ring",
         "fone": "01234561",
         "ender": "Rua Globo, 420, - São Paulo - BR",
+        "link": "/ana",
         "admin": false
     },
     {
@@ -36,6 +38,7 @@ const users = [
         "status": "escondi os cafés de casa.",
         "fone": "01334589",
         "ender": "Vila do Chaves, 53 - Sei lá - MX",
+        "link": "/quico",
         "admin": false
     }
 ]
