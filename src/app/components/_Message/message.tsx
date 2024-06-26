@@ -43,6 +43,13 @@ const Message = () => {
             senderP: true,
         },
 
+        {
+            idMsg: 6,
+            name: "aaaaaaaaaaaaaaaa",
+            data: "11:36",
+            senderP: false,
+        },
+
     ])
 
     return (

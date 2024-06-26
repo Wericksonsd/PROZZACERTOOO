@@ -6,17 +6,6 @@ const Chat = () => {
     return (
         <div  className={styles.container}>
             <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
-            <ChatBox/>
         </div>
     )
 
