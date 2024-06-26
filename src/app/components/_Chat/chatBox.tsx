@@ -2,7 +2,7 @@
 
 import styles from "./chat.module.css"
 import React,{useState, useEffect} from 'react'
-import Message from "../_Message/[slug]/page"
+import Message from "../_Message/message"
 import PropTypes from 'prop-types'
 
 const ChatBox = (props : any) => {

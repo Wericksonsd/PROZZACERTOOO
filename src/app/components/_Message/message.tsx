@@ -1,6 +1,7 @@
-import styles from "../message.module.css"
-import ChatInput from "../chatInput"
-import MsgHistory from "../msgHistoy"
+import styles from "./message.module.css"
+import MessagesCampo from "./messagesCampo/messagesCampo"
+import ChatInput from "./chatInput"
+import MsgHistory from "./msgHistoy"
 
 const Message  = (props:any) => {
 
