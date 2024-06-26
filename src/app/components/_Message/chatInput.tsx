@@ -8,20 +8,24 @@ const ChatInput = (props : any) => {
 
     const [mensagens, setMensagens] = useState();
     const [msgIpt, setMsgIpt] = useState();
-    const [id, setId] = useState(props.id);
+    const [id, setId] = useState(1);
+    let idM = 6
 
     const DigitarTexto = (event : any) => {
         setMsgIpt(event.target.value)
     }
 
     const EnviarMsg = () => {
+
         const newMsg = {
             name: {msgIpt},
-            data: new Date().getHours(),
-            senderP: true
+            data: (new Date().getHours()+":"+new Date().getMinutes()),
+            senderP: false
         };
 
         newMessage(id, newMsg)
+
+        console.log (id, newMsg)
     }
 
     return(

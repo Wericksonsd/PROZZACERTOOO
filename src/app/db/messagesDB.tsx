@@ -1,3 +1,5 @@
+import React,{useState} from 'react'
+
 const menssagens = [
     {
         id: 1,
@@ -16,27 +18,40 @@ const menssagens = [
             },
             {
                 idMsg: 3,
-                name: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de , fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por 'lorem ipsum' mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).",
-                data: "11:35",
+                name: "Na paz?",
+                data: "11:36",
                 senderP: true,
             },
             {
                 idMsg: 4,
-                name: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de , fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por 'lorem ipsum' mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).",
-                data: "11:35",
+                name: "Sauve",
+                data: "11:36",
                 senderP: false,
             },
             {
                 idMsg: 5,
-                name: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem",
-                data: "11:35",
+                name: "Como foi o rolê ontem?",
+                data: "11:37",
                 senderP: true,
             },
             {
                 idMsg: 6,
-                name: "aaaaaaaaaaaaaaaa",
+                name: "foi dahora",
                 data: "11:36",
                 senderP: false,
+            },
+            ,
+            {
+                idMsg: 7,
+                name: "Encontrei a Ana Maria Braga lá",
+                data: "11:37",
+                senderP: false,
+            },
+            {
+                idMsg: 8,
+                name: "E o Quico?",
+                data: "11:38",
+                senderP: true,
             }
         ]
     },
@@ -76,25 +91,27 @@ const menssagens = [
     }
 ]
 
-const getUserMsg = (id : number) => {
+
+const getUserMsg = (id: number) => {
     return menssagens.find((mssg) => mssg.id === id);
 }
 
-export const getUserMessages = async (id : number) => {
+export const getUserMessages = async (id: number) => {
     const userMessages = getUserMsg(id);
     return userMessages ? userMessages.mensagens : null;
 }
 
-export const newMessage = async (id : number, newMsg : any) => {
-    const userMessages = getUserMsg(id);
-    if (userMessages) {
-        const newId = userMessages.mensagens.length > 0 ? userMessages.mensagens[userMessages.mensagens.length - 1].idMsg + 1 : 1;
-        userMessages.mensagens.push({
+export const newMessage = async (id: number, newMsg: any) => {
+    const mnsg = getUserMsg(id);
+    if (mnsg) {
+        const newId = mnsg.mensagens.length > 0 ? mnsg.mensagens[mnsg.mensagens.length - 1].idMsg + 1 : 1;
+        mnsg.mensagens.push({
             idMsg: newId,
             ...newMsg
         });
-        return userMessages.mensagens;
+        return mnsg.mensagens;
     } else {
-        return null;
+        throw new Error("User not found");
     }
 }
+
